@@ -1,1 +1,4 @@
-console.log("EXECUTED");
+import dotenv from 'dotenv';
+dotenv.config();
+
+
