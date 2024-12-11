@@ -5,7 +5,7 @@ function tuzing. Ushbu function faqatgina positive sonlarni olib
 string holatida return qilsin.
 MASALAN: getPositive([1, -4, 2]) return qiladi "12". */
 
-function getPositive(arr) {
+function getPositive(arr: number[]): string {
     let argument = "";
   
     for (let i = 0; i < arr.length; i++) {
