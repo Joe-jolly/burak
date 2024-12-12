@@ -1,14 +1,13 @@
 import { Request, Response } from "express";
 import {T} from "../libs/types/common"
-import MemberService from "../models/member.service";
+import MemberService from "../models/Member.service";
 
 const restaurantController: T = {};
 
 restaurantController.goHomePage = (req: Request, res: Response) => {
     try {
         res.send('Home page')
-    }
-    catch (err) {
+    } catch (err) {
         console.log("ERROR, goHomePage", err)
     }
 };
@@ -16,8 +15,7 @@ restaurantController.goHomePage = (req: Request, res: Response) => {
 restaurantController.getLogin = (req: Request, res: Response) => {
     try {
         res.send('Login page')
-    }
-    catch (err) {
+    } catch (err) {
         console.log("ERROR, getLogin", err)
     }
 };
@@ -25,8 +23,7 @@ restaurantController.getLogin = (req: Request, res: Response) => {
 restaurantController.getSignup = (req: Request, res: Response) => {
     try {
         res.send('Signup page')
-    }
-    catch (err) {
+    } catch (err) {
         console.log("ERROR, getSignup", err)
     }
 };
