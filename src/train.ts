@@ -1,3 +1,17 @@
+/* Project standards:
+  - Logging standards,
+  - Naming standards:
+    * function, method, variable => CAMEL
+    * class => PASCAL
+    * folder => KEBAB
+    * css => SNAKE
+  - Error handlings
+
+*/
+
+
+/* ###########################    ###############################   ######################*/
+
 /* H-2 Task */
 
 /* Shunday function tuzing, unga string argument pass bolsin. Function ushbu agrumentdagi digitlarni yangi stringda return qilsin
@@ -11,6 +25,9 @@ const getDigits = (text: string) => {
 console.log(getDigits("m14i1t"));
 
 console.log(getDigits("hb828b0d2"));
+
+
+/* ###########################    ###############################   ######################*/
 
 /* H Task */
 
