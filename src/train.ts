@@ -6,8 +6,13 @@
     * folder, file => KEBAB
     * css => SNAKE
   - Error handlings
-
 */
+
+/** Most common utilize API types:
+      Traditional API
+      Rest API
+      GraphQL API
+ */
 
 /* ###########################    ###############################   ######################*/
 
