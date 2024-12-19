@@ -14,6 +14,32 @@
       GraphQL API
  */
 
+
+/* ###########################    ###############################   ######################*/
+
+/* J-TASK: */
+
+/** Shunday function yozing, u string qabul qilsin va string ichidagi eng uzun sozni qaytarsin.
+MASALAN: findLongestWord("I come from Uzbekistan") return "Uzbekistan" */
+
+const findLongestWord = (sentence: string): string => {
+  const words = sentence.split(' ');
+  let longestWord = '';
+
+  for (let word of words) {
+    if (word.length > longestWord.length) {
+      longestWord = word;
+    }
+  }
+
+  return longestWord;
+};
+
+console.log(findLongestWord("I come from Uzbekistan")); // "Uzbekistan"
+
+
+
+
 /* ###########################    ###############################   ######################*/
 
 /* I Task */
@@ -21,38 +47,38 @@
 /* Shunday function yozing, u parametridagi array ichida eng kop takrorlangan raqamni topib qaytarsin.
 MASALAN: majorityElement([1,2,3,4,5,4,3,4]) return 4 */
 
-const majorityElement = (arr: number[]): number | undefined => {
-  const countMap: { [key: number]: number } = {}; 
+// const majorityElement = (arr: number[]): number | undefined => {
+//   const countMap: { [key: number]: number } = {}; 
 
-  for (let num of arr) {
-    countMap[num] = (countMap[num] || 0) + 1; 
-  }
+//   for (let num of arr) {
+//     countMap[num] = (countMap[num] || 0) + 1; 
+//   }
 
-  let maxCount = 0; 
-  let majorityNum: number | undefined = undefined; 
+//   let maxCount = 0; 
+//   let majorityNum: number | undefined = undefined; 
 
-  for (let num in countMap) {
-    if (countMap[num] > maxCount) {
-      maxCount = countMap[num];
-      majorityNum = Number(num); 
-    }
-  }
-  return majorityNum; 
-};
+//   for (let num in countMap) {
+//     if (countMap[num] > maxCount) {
+//       maxCount = countMap[num];
+//       majorityNum = Number(num); 
+//     }
+//   }
+//   return majorityNum; 
+// };
 
 
 
-const majorityElement2 = (arr: number[]): number | undefined => {
-  const findMajorityElement2 = arr.sort((a, b) => a-b);
-  for (let i = 0; i < arr.length - 1; i++) {
-    if (findMajorityElement2[i] === findMajorityElement2[i+1]) {
-      return findMajorityElement2[i];
-    };
-  };
-  return undefined;
-};
-console.log(majorityElement([2, 5, 6, 2, 5, 6, 5])); // ChatGPT bilan yechilgan
-console.log(majorityElement2([2, 5, 6, 2, 5, 6, 5])); // O'zim mustaqil yozganim :')
+// const majorityElement2 = (arr: number[]): number | undefined => {
+//   const findMajorityElement2 = arr.sort((a, b) => a-b);
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     if (findMajorityElement2[i] === findMajorityElement2[i+1]) {
+//       return findMajorityElement2[i];
+//     };
+//   };
+//   return undefined;
+// };
+// console.log(majorityElement([2, 5, 6, 2, 5, 6, 5])); // ChatGPT bilan yechilgan
+// console.log(majorityElement2([2, 5, 6, 2, 5, 6, 5])); // O'zim mustaqil yozganim :')
 
 
 
