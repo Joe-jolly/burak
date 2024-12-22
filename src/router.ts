@@ -9,5 +9,7 @@ import memeberController from "./controllers/member.controller";
 
 // router.get("/signup", memeberController.getSignup);
 
+router.post("/login", memeberController.login);
+router.post("/signup", memeberController.signup);
 
 export default router;

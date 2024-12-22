@@ -14,6 +14,10 @@
       GraphQL API
  */
 
+/** 
+  Traditional Frontend Development  => BSSR => EJS
+  Modern FD                         => SPA  => REACT
+ */
 
 /* ###########################    ###############################   ######################*/
 
