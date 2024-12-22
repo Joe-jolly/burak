@@ -21,25 +21,48 @@
 
 /* ###########################    ###############################   ######################*/
 
+/** K-TASK:  */
+
+
+  const countVowels = (text: string): number => {
+    const vowels = 'aeiou'; 
+    let count = 0; 
+  
+    for (let char of text.toLowerCase()) { 
+      if (vowels.includes(char)) { 
+        count++; 
+      }
+    }
+  
+    return count;
+  };
+  
+  console.log(countVowels("string"));
+  console.log(countVowels("TypeScript"));
+  
+
+
+/* ###########################    ###############################   ######################*/
+
 /* J-TASK: */
 
 /** Shunday function yozing, u string qabul qilsin va string ichidagi eng uzun sozni qaytarsin.
 MASALAN: findLongestWord("I come from Uzbekistan") return "Uzbekistan" */
 
-const findLongestWord = (sentence: string): string => {
-  const words = sentence.split(' ');
-  let longestWord = '';
+// const findLongestWord = (sentence: string): string => {
+//   const words = sentence.split(' ');
+//   let longestWord = '';
 
-  for (let word of words) {
-    if (word.length > longestWord.length) {
-      longestWord = word;
-    }
-  }
+//   for (let word of words) {
+//     if (word.length > longestWord.length) {
+//       longestWord = word;
+//     }
+//   }
 
-  return longestWord;
-};
+//   return longestWord;
+// };
 
-console.log(findLongestWord("I come from Uzbekistan")); // "Uzbekistan"
+// console.log(findLongestWord("I come from Uzbekistan")); // "Uzbekistan"
 
 
 
