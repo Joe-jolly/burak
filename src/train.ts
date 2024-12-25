@@ -21,24 +21,42 @@
 
 /* ###########################    ###############################   ######################*/
 
+/** L-TASK */
+
+/** Shunday function yozing, u string qabul qilsin va string ichidagi hamma sozlarni chappasiga yozib va sozlar ketma-ketligini buzmasdan stringni qaytarsin.
+MASALAN: reverseSentence("we like coding") return "ew ekil gnidoc"; */
+
+const reverseSentence = (sentence: string): string => {
+  return sentence
+    .split(' ') // So‘zlarga ajratish
+    .map(word => word.split('').reverse().join('')) // Har bir so‘zni chappasiga yozish
+    .join(' '); // So‘zlarni yana bo‘sh joy bilan birlashtirish
+};
+
+console.log(reverseSentence("we like coding")); // "ew ekil gnidoc"
+
+
+
+/* ###########################    ###############################   ######################*/
+
 /** K-TASK:  */
 
 
-  const countVowels = (text: string): number => {
-    const vowels = 'aeiou'; 
-    let count = 0; 
+  // const countVowels = (text: string): number => {
+  //   const vowels = 'aeiou'; 
+  //   let count = 0; 
   
-    for (let char of text.toLowerCase()) { 
-      if (vowels.includes(char)) { 
-        count++; 
-      }
-    }
+  //   for (let char of text.toLowerCase()) { 
+  //     if (vowels.includes(char)) { 
+  //       count++; 
+  //     }
+  //   }
   
-    return count;
-  };
+  //   return count;
+  // };
   
-  console.log(countVowels("string"));
-  console.log(countVowels("TypeScript"));
+  // console.log(countVowels("string"));
+  // console.log(countVowels("TypeScript"));
   
 
 
