@@ -28,7 +28,7 @@ app.use(
     session({
         secret: 'This is a secret',
         cookie: {
-            maxAge: 1000 * 60 * 60 * 24 * 7 // 1 weak
+            maxAge: 1000 * 3600 * 6 // 6 h
         },
         store: store,
         resave: true,
