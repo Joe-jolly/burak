@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import {T} from "../libs/types/common"
 import MemberService from "../models/Member.service";
 import { AdminReuqest, LoginInput, MemberInput } from "../libs/types/member";
@@ -109,6 +109,22 @@ restaurantController.checkAuthSession = async (
     } catch (err) {
         console.log("ERROR, checkAuthSession", err);
         res.send(err);
+    }
+};
+
+restaurantController.verifyRestaurant = async (
+    req: AdminReuqest, 
+    res: Response,
+    next: NextFunction
+) => {
+    if(req.session?.member?.memberType === MemberType.RESTAURANT) {
+        req.member = req.session.member;
+        next();
+    } else {
+        const message = Message.NOT_AUTHENTICATED
+        res.send(
+            `<script> alert("${message}"); window.location.replace('/admin/login'); </script>`
+        );
     }
 };
 
