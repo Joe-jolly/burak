@@ -27,19 +27,40 @@
 
 /* ###########################    ###############################   ######################*/
 
+/** M TASK */
+/** Shunday function yozing, u raqamlardan tashkil topgan array qabul qilsin va array ichidagi har bir raqam uchun raqamni ozi va hamda osha raqamni kvadratidan tashkil topgan object hosil qilib, hosil bolgan objectlarni array ichida qaytarsin.
+MASALAN: getSquareNumbers([1, 2, 3]) return [{number: 1, square: 1}, {number: 2, square: 4}, {number: 3, square: 9}]; */
+
+
+const getSquareNumbers = (arr: number[]): { number: number; square: number }[] => {
+  const result = []; // Natijani saqlash uchun bo'sh array
+  for (let i = 0; i < arr.length; i++) {
+    const number = arr[i];
+    const square = number * number;
+    result.push({ number: number, square: square }); // Har bir raqam va kvadratini object sifatida qo'shamiz
+  }
+  return result; // Hosil bo'lgan arrayni qaytaramiz
+};
+
+console.log(getSquareNumbers([1, 2, 3])); 
+// Natija: [{ number: 1, square: 1 }, { number: 2, square: 4 }, { number: 3, square: 9 }]
+
+
+/* ###########################    ###############################   ######################*/
+
 /** L-TASK */
 
 /** Shunday function yozing, u string qabul qilsin va string ichidagi hamma sozlarni chappasiga yozib va sozlar ketma-ketligini buzmasdan stringni qaytarsin.
 MASALAN: reverseSentence("we like coding") return "ew ekil gnidoc"; */
 
-const reverseSentence = (sentence: string): string => {
-  return sentence
-    .split(' ') // So‘zlarga ajratish
-    .map(word => word.split('').reverse().join('')) // Har bir so‘zni chappasiga yozish
-    .join(' '); // So‘zlarni yana bo‘sh joy bilan birlashtirish
-};
+// const reverseSentence = (sentence: string): string => {
+//   return sentence
+//     .split(' ') // So‘zlarga ajratish
+//     .map(word => word.split('').reverse().join('')) // Har bir so‘zni chappasiga yozish
+//     .join(' '); // So‘zlarni yana bo‘sh joy bilan birlashtirish
+// };
 
-console.log(reverseSentence("we like coding")); // "ew ekil gnidoc"
+// console.log(reverseSentence("we like coding")); // "ew ekil gnidoc"
 
 
 
