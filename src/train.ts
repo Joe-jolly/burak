@@ -17,6 +17,12 @@
 /** 
   Traditional Frontend Development  => BSSR => EJS
   Modern FD                         => SPA  => REACT
+*/
+
+/** Validations:
+  Frontend validatiom;
+  Backend validation;
+  Database valiadtion
  */
 
 /* ###########################    ###############################   ######################*/
