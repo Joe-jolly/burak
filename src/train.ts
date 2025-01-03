@@ -25,6 +25,25 @@
   Database valiadtion
  */
 
+  
+/* ###########################    ###############################   ######################*/
+/**N-TASK */
+/** Shunday function yozing, u string qabul qilsin va string palindrom yani togri oqilganda ham, orqasidan oqilganda ham bir hil oqiladigan soz ekanligini aniqlab boolean qiymat qaytarsin.
+MASALAN: palindromCheck("dad") return true;  palindromCheck("son") return false; */
+
+const palindromWord = (input: string): boolean => {
+    const palindromCheck = input.split('').reverse().join('');
+    if(input === palindromCheck) {
+      return true
+      } else {
+        return false
+      };
+
+};
+console.log(palindromWord("google"));
+console.log(palindromWord("dad"));
+
+
 /* ###########################    ###############################   ######################*/
 
 /** M TASK */
@@ -32,18 +51,18 @@
 MASALAN: getSquareNumbers([1, 2, 3]) return [{number: 1, square: 1}, {number: 2, square: 4}, {number: 3, square: 9}]; */
 
 
-const getSquareNumbers = (arr: number[]): { number: number; square: number }[] => {
-  const result = []; // Natijani saqlash uchun bo'sh array
-  for (let i = 0; i < arr.length; i++) {
-    const number = arr[i];
-    const square = number * number;
-    result.push({ number: number, square: square }); // Har bir raqam va kvadratini object sifatida qo'shamiz
-  }
-  return result; // Hosil bo'lgan arrayni qaytaramiz
-};
+// const getSquareNumbers = (arr: number[]): { number: number; square: number }[] => {
+//   const result = []; // Natijani saqlash uchun bo'sh array
+//   for (let i = 0; i < arr.length; i++) {
+//     const number = arr[i];
+//     const square = number * number;
+//     result.push({ number: number, square: square }); // Har bir raqam va kvadratini object sifatida qo'shamiz
+//   }
+//   return result; // Hosil bo'lgan arrayni qaytaramiz
+// };
 
-console.log(getSquareNumbers([1, 2, 3])); 
-// Natija: [{ number: 1, square: 1 }, { number: 2, square: 4 }, { number: 3, square: 9 }]
+// console.log(getSquareNumbers([1, 2, 3])); 
+// // Natija: [{ number: 1, square: 1 }, { number: 2, square: 4 }, { number: 3, square: 9 }]
 
 
 /* ###########################    ###############################   ######################*/
