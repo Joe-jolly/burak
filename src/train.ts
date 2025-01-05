@@ -23,25 +23,40 @@
   Frontend validatiom;
   Backend validation;
   Database valiadtion
- */
+*/
 
-  
+/* ###########################    ###############################   ######################*/
+/** O-TASK: */
+/** Shunday function yozing, u har xil valuelardan iborat array qabul qilsin va array ichidagi sonlar yigindisini hisoblab chiqqan javobni qaytarsin.
+MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]) return 45 */
+
+const calculateSumOfNumbers = (arr: any[]) => {
+  const checkMixedArray = arr.filter(element => typeof element === 'number');
+  let sumOfNumbers = 0;
+  for (let num of checkMixedArray) {
+    sumOfNumbers += num;
+  }
+  return sumOfNumbers;  
+}
+console.log(calculateSumOfNumbers([2, "10", "Uzbekistan", 20, 14]));
+
+
 /* ###########################    ###############################   ######################*/
 /**N-TASK */
 /** Shunday function yozing, u string qabul qilsin va string palindrom yani togri oqilganda ham, orqasidan oqilganda ham bir hil oqiladigan soz ekanligini aniqlab boolean qiymat qaytarsin.
 MASALAN: palindromCheck("dad") return true;  palindromCheck("son") return false; */
 
-const palindromWord = (input: string): boolean => {
-    const palindromCheck = input.split('').reverse().join('');
-    if(input === palindromCheck) {
-      return true
-      } else {
-        return false
-      };
+// const palindromWord = (input: string): boolean => {
+//     const palindromCheck = input.split('').reverse().join('');
+//     if(input === palindromCheck) {
+//       return true
+//       } else {
+//         return false
+//       };
 
-};
-console.log(palindromWord("google"));
-console.log(palindromWord("dad"));
+// };
+// console.log(palindromWord("google"));
+// console.log(palindromWord("dad"));
 
 
 /* ###########################    ###############################   ######################*/
