@@ -31,6 +31,7 @@ productController.createNewProduct = async (
 ) => {
     try {
         console.log("createNewProduct");
+        console.log("req.body:", req.body);
         console.log("Uploaded Files:", req.files);
 
         if(!req.files?.length)
@@ -44,14 +45,14 @@ productController.createNewProduct = async (
         await productService.createNewProduct(data);
 
         res.send(
-            `<script> alert("successful creation"); window.location.replace('admin/product/all')</script>`
+            `<script> alert("successful creation"); window.location.replace('/admin/product/all')</script>`
         );
         
     } catch (err) {
         console.log("ERROR, createNewProduct", err);
         const message = err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG;
         res.send(
-            `<script> alert("${message}"); window.location.replace('admin/product/all')</script>`
+            `<script> alert("${message}"); window.location.replace('/admin/product/all')</script>`
         );
     }
 };
