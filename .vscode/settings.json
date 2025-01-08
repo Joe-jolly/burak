@@ -1,3 +1,5 @@
 {
-    "files.autoSave": "afterDelay"
+    "files.autoSave": "afterDelay",
+    "zenMode.fullScreen": true,
+    "editor.autoIndent": "none"
 }
