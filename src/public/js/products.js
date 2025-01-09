@@ -33,7 +33,6 @@ $(function() {
             });
             console.log("response:", response);
             const result = response.data;
-            console.log("result:", result);
             if(result.data) {
                 console.log("Product updated!")
                 $(".new-product-status").blur();
