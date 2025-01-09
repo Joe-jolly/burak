@@ -31,7 +31,6 @@ productController.createNewProduct = async (
 ) => {
     try {
         console.log("createNewProduct");
-        console.log("req.body:", req.body);
         console.log("Uploaded Files:", req.files);
 
         if(!req.files?.length)
@@ -63,7 +62,6 @@ productController.updateChosenProduct = async (req: Request, res: Response) => {
         const id = req.params.id;
 
         const result = await productService.updateChosenProduct(id, req.body);
-        console.log("req.body:", req.body);
         res.status(HttpCode.OK).json({ data: result });
         console.log("result:", result);
     } catch (err) {

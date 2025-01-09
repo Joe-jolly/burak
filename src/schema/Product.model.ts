@@ -4,7 +4,7 @@ import { ProductCollection, ProductSize, ProductStatus, ProductVolume } from "..
 
 const productSchema = new Schema(
     {
-        productSatus: {
+        productStatus: {
             type: String,
             enum: ProductStatus,
             default: ProductStatus.PAUSE,

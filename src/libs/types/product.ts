@@ -7,7 +7,7 @@ import {
 
 export interface Product {
     _id:ObjectId;
-    productSatus: ProductStatus;
+    productStatus: ProductStatus;
     productCollection: ProductCollection;
     productName: String;
     ProductPrice: Number;
@@ -20,7 +20,7 @@ export interface Product {
 }
 
 export interface ProductInput {
-    productSatus?: ProductStatus;
+    productStatus?: ProductStatus;
     productCollection: ProductCollection;
     productName: String;
     ProductPrice: Number;
@@ -34,7 +34,7 @@ export interface ProductInput {
 
 export interface ProductUpdateInput {
     _id:ObjectId;
-    productSatus?: ProductStatus;
+    productStatus?: ProductStatus;
     productCollection?: ProductCollection;
     productName?: String;
     ProductPrice?: Number;
