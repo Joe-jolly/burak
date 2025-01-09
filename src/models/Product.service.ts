@@ -38,6 +38,7 @@ class ProductService {
         const result = await this.productModel
             .findOneAndUpdate({ _id: id }, input, { new: true })
             .exec();
+            console.log("input:", input);
         if(!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
 
         return result;
