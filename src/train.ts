@@ -26,19 +26,40 @@
 */
 
 /* ###########################    ###############################   ######################*/
+/** P-TASK: */
+/** Shunday function yozing, u object qabul qilsin va arrayni object arrayga otkazib arrayni qaytarsin qaytarsin.
+MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]] */
+
+function objectToArray(obj: { [key: string]: any }): any[] {
+  const result: any[] = [];
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      result.push([key, obj[key]]);
+    }
+  }
+  return result;
+}
+
+console.log(objectToArray({ a: 10, b: 20 })); // [['a', 10], ['b', 20]]
+
+
+
+
+
+/* ###########################    ###############################   ######################*/
 /** O-TASK: */
 /** Shunday function yozing, u har xil valuelardan iborat array qabul qilsin va array ichidagi sonlar yigindisini hisoblab chiqqan javobni qaytarsin.
 MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]) return 45 */
 
-const calculateSumOfNumbers = (arr: any[]) => {
-  const checkMixedArray = arr.filter(element => typeof element === 'number');
-  let sumOfNumbers = 0;
-  for (let num of checkMixedArray) {
-    sumOfNumbers += num;
-  }
-  return sumOfNumbers;  
-}
-console.log(calculateSumOfNumbers([2, "10", "Uzbekistan", 20, 14]));
+// const calculateSumOfNumbers = (arr: any[]) => {
+//   const checkMixedArray = arr.filter(element => typeof element === 'number');
+//   let sumOfNumbers = 0;
+//   for (let num of checkMixedArray) {
+//     sumOfNumbers += num;
+//   }
+//   return sumOfNumbers;  
+// }
+// console.log(calculateSumOfNumbers([2, "10", "Uzbekistan", 20, 14]));
 
 
 /* ###########################    ###############################   ######################*/
