@@ -26,21 +26,37 @@
 */
 
 /* ###########################    ###############################   ######################*/
+/** Q-TASK: */
+/** Shunday function yozing, u 2 ta parametrgga ega bolib birinchisi object, ikkinchisi string. Agar string parametr objectni propertysi bolsa true bolmasa false qaytarsin.
+MASALAN: hasProperty({name: "BMW", model: "M3"}, "model") return true; hasProperty({name: "BMW", model: "M3"}, "year") return false */
+
+ const hasProperty = (obj: Record<string, any>, key: string): boolean => {
+    return key in obj;
+}
+
+console.log(hasProperty({name: "BMW", model: "M3"}, "model"));
+console.log(hasProperty({name: "BMW", model: "M3"}, "year"));
+
+
+
+
+
+/* ###########################    ###############################   ######################*/
 /** P-TASK: */
 /** Shunday function yozing, u object qabul qilsin va arrayni object arrayga otkazib arrayni qaytarsin qaytarsin.
 MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]] */
 
-function objectToArray(obj: { [key: string]: any }): any[] {
-  const result: any[] = [];
-  for (let key in obj) {
-    if (obj.hasOwnProperty(key)) {
-      result.push([key, obj[key]]);
-    }
-  }
-  return result;
-}
+// function objectToArray(obj: { [key: string]: any }): any[] {
+//   const result: any[] = [];
+//   for (let key in obj) {
+//     if (obj.hasOwnProperty(key)) {
+//       result.push([key, obj[key]]);
+//     }
+//   }
+//   return result;
+// }
 
-console.log(objectToArray({ a: 10, b: 20 })); // [['a', 10], ['b', 20]]
+// console.log(objectToArray({ a: 10, b: 20 })); // [['a', 10], ['b', 20]]
 
 
 
