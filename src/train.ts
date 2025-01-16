@@ -26,6 +26,27 @@
 */
 
 /* ###########################    ###############################   ######################*/
+/** S-TASK: */
+/**Shunday function yozing, u numberlardan tashkil topgan array qabul qilsin va osha numberlar orasidagi tushib qolgan sonni topib uni return qilsin
+MASALAN: missingNumber([3, 0, 1]) return 2 */
+
+const missingNumber = (nums: number[]): number => {
+    const n = nums.length; 
+    const expectedSum = (n * (n + 1)) / 2;
+
+    const actualSum = nums.reduce((total, num) => total + num, 0);
+
+    return expectedSum - actualSum;
+};
+
+console.log(missingNumber([3, 0, 1])); // 2
+console.log(missingNumber([0, 1])); // 2
+console.log(missingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1])); // 8
+
+
+
+
+/* ###########################    ###############################   ######################*/
 /** R-TASK: */
 /**Shunday function yozing, u string parametrga ega bo'lsin.
 Agar argument sifatida berilayotgan string, "1 + 2" bo'lsa,
@@ -34,26 +55,22 @@ string ichidagi sonlarin yig'indisni hisoblab, number holatida qaytarsin
 MASALAN: calculate("1 + 3"); return 4;
 1 + 3 = 4, shu sababli 4 natijani qaytarmoqda. */
 
-const calculate = (input: string): number => {
-    const parts = input.split(" ");
-    let result = 0;
+// const calculate = (input: string): number => {
+//     const parts = input.split(" ");
+//     let result = 0;
 
-    for (let i = 0; i < parts.length; i++) {
-        if (!isNaN(Number(parts[i]))) { 
-            result += Number(parts[i]); 
-    }
-  }
+//     for (let i = 0; i < parts.length; i++) {
+//         if (!isNaN(Number(parts[i]))) { 
+//             result += Number(parts[i]); 
+//     }
+//   }
 
-    return result; 
-};
+//     return result; 
+// };
 
-console.log(calculate("1 + 3")); 
-console.log(calculate("10 + 20"));
-console.log(calculate("5 + 5 + 5"));
-
-
-
-
+// console.log(calculate("1 + 3")); 
+// console.log(calculate("10 + 20"));
+// console.log(calculate("5 + 5 + 5"));
 
 
 
