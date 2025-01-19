@@ -25,23 +25,46 @@
   Database valiadtion
 */
 
+
+/* ###########################    ###############################   ######################*/
+/** T-TASK: */
+/** Shunday function tuzing, u sonlardan tashkil topgan 2'ta array qabul qilsin. Va ikkala arraydagi sonlarni tartiblab bir arrayda qaytarsin.
+MASALAN: mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]); return [0, 3, 4, 4, 6, 30, 31];
+Yuqoridagi misolda, ikkala arrayni birlashtirib, tartib raqam bo'yicha tartiblab qaytarmoqda. */
+
+const mergeSortedArrays = (arr1: number[], arr2: number[]): number[] => {
+  const mergedArray = arr1.concat(arr2);
+
+  const sortedArray = mergedArray.sort((a, b) => a - b);
+  return sortedArray;
+};
+
+console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30])); 
+// [0, 3, 4, 4, 6, 30, 31]
+
+
+
+
+
+
+
 /* ###########################    ###############################   ######################*/
 /** S-TASK: */
 /**Shunday function yozing, u numberlardan tashkil topgan array qabul qilsin va osha numberlar orasidagi tushib qolgan sonni topib uni return qilsin
 MASALAN: missingNumber([3, 0, 1]) return 2 */
 
-const missingNumber = (nums: number[]): number => {
-    const n = nums.length; 
-    const expectedSum = (n * (n + 1)) / 2;
+// const missingNumber = (nums: number[]): number => {
+//     const n = nums.length; 
+//     const expectedSum = (n * (n + 1)) / 2;
 
-    const actualSum = nums.reduce((total, num) => total + num, 0);
+//     const actualSum = nums.reduce((total, num) => total + num, 0);
 
-    return expectedSum - actualSum;
-};
+//     return expectedSum - actualSum;
+// };
 
-console.log(missingNumber([3, 0, 1])); // 2
-console.log(missingNumber([0, 1])); // 2
-console.log(missingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1])); // 8
+// console.log(missingNumber([3, 0, 1])); // 2
+// console.log(missingNumber([0, 1])); // 2
+// console.log(missingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1])); // 8
 
 
 
