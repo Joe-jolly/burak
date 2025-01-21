@@ -26,20 +26,46 @@
 */
 
 
+
+/* ###########################    ###############################   ######################*/
+/** U-TASK: */
+// Shunday function yozing, uni number parametri bolsin va 0 dan berilgan parametrgacha bolgan oraliqdagi faqat toq sonlar nechtaligini return qilsin
+// MASALAN: sumOdds(9) return 4; sumOdds(11) return 5;
+
+
+const sumOdds = (number: number) => {
+  let count = 0;
+
+  for (let i = 0; i <= number; i++) {
+    if (i % 2 !== 0) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+console.log(sumOdds(9));
+console.log(sumOdds(101)); 
+
+
+
+
+
 /* ###########################    ###############################   ######################*/
 /** T-TASK: */
 /** Shunday function tuzing, u sonlardan tashkil topgan 2'ta array qabul qilsin. Va ikkala arraydagi sonlarni tartiblab bir arrayda qaytarsin.
 MASALAN: mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]); return [0, 3, 4, 4, 6, 30, 31];
 Yuqoridagi misolda, ikkala arrayni birlashtirib, tartib raqam bo'yicha tartiblab qaytarmoqda. */
 
-const mergeSortedArrays = (arr1: number[], arr2: number[]): number[] => {
-  const mergedArray = arr1.concat(arr2);
+// const mergeSortedArrays = (arr1: number[], arr2: number[]): number[] => {
+//   const mergedArray = arr1.concat(arr2);
 
-  const sortedArray = mergedArray.sort((a, b) => a - b);
-  return sortedArray;
-};
+//   const sortedArray = mergedArray.sort((a, b) => a - b);
+//   return sortedArray;
+// };
 
-console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30])); 
+// console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30])); 
 // [0, 3, 4, 4, 6, 30, 31]
 
 
