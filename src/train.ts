@@ -25,6 +25,36 @@
   Database valiadtion
 */
 
+/* ###########################    ###############################   ######################*/
+/** V-TASK: */
+// Shunday function yozing, uni string parametri bo'lsin. Va bu function stringdagi har bir harfni o'zi bilan
+// necha marotaba taktorlanganligini ko'rsatuvchi object qaytarsin.  
+// MASALAN: countChars("hello") return {h: 1, e: 1, l: 2, o: 1}
+
+// Yuqoridagi misolda, 'hello' so'zi tarkibida qatnashgan harflar necha marotaba takrorlangini bilan object sifatida qaytarilmoqda.
+
+const countChars = (word: string) =>
+{
+  const wordWithoutSpaces = word.replace(/\s/g, ""); // Probellarni olib tashlash
+  const wordSplit = wordWithoutSpaces.split("");
+   const charCount: { [key: string]: number } = {};
+
+  wordSplit.forEach((char) => {
+    if (charCount[char]) {
+      charCount[char] += 1;
+    } else {
+      charCount[char] = 1;
+    }
+  });
+
+  return charCount;
+};
+
+console.log(countChars("hello"));
+console.log(countChars("Devex academy"));
+
+
+
 
 
 /* ###########################    ###############################   ######################*/
@@ -33,20 +63,20 @@
 // MASALAN: sumOdds(9) return 4; sumOdds(11) return 5;
 
 
-const sumOdds = (number: number) => {
-  let count = 0;
+// const sumOdds = (number: number) => {
+//   let count = 0;
 
-  for (let i = 0; i <= number; i++) {
-    if (i % 2 !== 0) {
-      count++;
-    }
-  }
+//   for (let i = 0; i <= number; i++) {
+//     if (i % 2 !== 0) {
+//       count++;
+//     }
+//   }
 
-  return count;
-}
+//   return count;
+// }
 
-console.log(sumOdds(9));
-console.log(sumOdds(101)); 
+// console.log(sumOdds(9));
+// console.log(sumOdds(101)); 
 
 
 
