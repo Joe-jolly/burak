@@ -36,7 +36,9 @@ class MemberService {
                 { memberNick: 1, memberPassword: 1, MemberStatus: 1 }
             )
             .exec();
-        if(!member) throw new Errors(HttpCode.NOT_FOUND,  Message.NO_MEMBER_NICK); else if(member.memberStatus === MemberStatus.BLOCK) {
+        if (!member) throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);
+            else if (member.memberStatus === MemberStatus.BLOCK)
+        {
             throw new Errors(HttpCode.FORBIDDEN, Message.CREATE_FAILED)
         }
 

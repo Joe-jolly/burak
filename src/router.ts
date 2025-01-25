@@ -12,4 +12,4 @@ import memeberController from "./controllers/member.controller";
 router.post("/login", memeberController.login);
 router.post("/signup", memeberController.signup);
 
-export default router;
+export default router; 
