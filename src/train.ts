@@ -26,6 +26,27 @@
 */
 
 /* ###########################    ###############################   ######################*/
+/** W-TASK: */
+/**Shunday function yozing, uni array va number parametrlari bolsin. Function arrayni numberda berilgan uzunlikda kesib bolaklarga ajratilgan array holatida qaytarsin
+MASALAN: chunkArray([1,2,3,4,5,6,7,8,9,10], 3) return [[1,2,3], [4,5,6], [7,8,9], [10]] */
+
+const chunkArray = (arr: number[], size: number) =>
+{
+  const result: number[][] = [];
+  
+  for (let i = 0; i < arr.length; i += size) 
+  {    
+    const chunk = arr.slice(i, i + size);
+    result.push(chunk);
+  }
+
+  return result;
+}
+console.log("W Task result:")
+console.log(chunkArray([1, 4, 6, 3, 6, 3, 9, 0, 8], 2));
+
+
+/* ###########################    ###############################   ######################*/
 /** V-TASK: */
 // Shunday function yozing, uni string parametri bo'lsin. Va bu function stringdagi har bir harfni o'zi bilan
 // necha marotaba taktorlanganligini ko'rsatuvchi object qaytarsin.  
@@ -49,7 +70,7 @@ const countChars = (word: string) =>
 
   return charCount;
 };
-
+console.log("V Task result:")
 console.log(countChars("hello"));
 console.log(countChars("Devex academy"));
 
