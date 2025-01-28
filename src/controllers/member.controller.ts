@@ -89,7 +89,7 @@ memeberController.updateMember = async (req: ExtendedRequest, res: Response) =>
         const input: MemberUpdateInput = req.body;
         console.log("req.body:", req.body);
         if (req.file) input.memberImage = req.file.path.replace(/\\/, "/");
-        console.log("photocheck:", req.file);        
+        console.log("photocheck:", req.file);
         const result = await memberService.updateMember(req.member, input);
         
         res.status(HttpCode.OK).json(result);
@@ -99,7 +99,24 @@ memeberController.updateMember = async (req: ExtendedRequest, res: Response) =>
         if (err instanceof Errors) res.status(err.code).json(err);
         else res.status(Errors.standard.code).json(Errors.standard);
     }
-} 
+};
+
+memeberController.getTopUsers = async (req: Request, res: Response) =>
+{
+    try
+    {
+        console.log("getTopUsers");
+        
+        const result = await memberService.getTopUsers();
+        
+        res.status(HttpCode.OK).json(result);
+    } catch (err)
+    {
+        console.log("ERROR, getTopUsers", err);
+        if (err instanceof Errors) res.status(err.code).json(err);
+        else res.status(Errors.standard.code).json(Errors.standard);
+    }
+}
 
 memeberController.verifyAuth = async (req: ExtendedRequest, res: Response, next: NextFunction) =>
 {
