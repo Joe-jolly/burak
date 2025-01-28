@@ -26,24 +26,51 @@
 */
 
 /* ###########################    ###############################   ######################*/
+/** X-TASK: */
+/** Shunday function yozing, uni object va string parapetrlari bolsin. Function string parametri object ichida necha marotaba takrorlanganligini qaytarsin (nested object bolsa ham sanasin)
+ MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2 */
+
+const countOccurrences = (obj: Record<string, unknown>, targetKey: string): number => {
+  let count = 0;
+  for (let key in obj) {
+    if (key === targetKey) {
+      count++;
+    }
+
+    if (typeof obj[key] === "object" && obj[key] !== null) {
+      count += countOccurrences(obj[key] as Record<string, unknown>, targetKey);
+    }
+  }
+  return count; 
+};
+console.log(countOccurrences({ model: 'Bugatti', steer: { model: 'HANKOOK', size: 30 } }, 'model'));
+console.log(countOccurrences({ a: { b: { c: 'd' }, e: 'f' }, g: { c: 'c' } }, 'c'));
+console.log(countOccurrences({}, 'test'));
+
+
+
+
+
+
+/* ###########################    ###############################   ######################*/
 /** W-TASK: */
 /**Shunday function yozing, uni array va number parametrlari bolsin. Function arrayni numberda berilgan uzunlikda kesib bolaklarga ajratilgan array holatida qaytarsin
 MASALAN: chunkArray([1,2,3,4,5,6,7,8,9,10], 3) return [[1,2,3], [4,5,6], [7,8,9], [10]] */
 
-const chunkArray = (arr: number[], size: number) =>
-{
-  const result: number[][] = [];
+// const chunkArray = (arr: number[], size: number) =>
+// {
+//   const result: number[][] = [];
   
-  for (let i = 0; i < arr.length; i += size) 
-  {    
-    const chunk = arr.slice(i, i + size);
-    result.push(chunk);
-  }
+//   for (let i = 0; i < arr.length; i += size) 
+//   {    
+//     const chunk = arr.slice(i, i + size);
+//     result.push(chunk);
+//   }
 
-  return result;
-}
-console.log("W Task result:")
-console.log(chunkArray([1, 4, 6, 3, 6, 3, 9, 0, 8], 2));
+//   return result;
+// }
+// console.log("W Task result:")
+// console.log(chunkArray([1, 4, 6, 3, 6, 3, 9, 0, 8], 2));
 
 
 /* ###########################    ###############################   ######################*/
@@ -54,25 +81,25 @@ console.log(chunkArray([1, 4, 6, 3, 6, 3, 9, 0, 8], 2));
 
 // Yuqoridagi misolda, 'hello' so'zi tarkibida qatnashgan harflar necha marotaba takrorlangini bilan object sifatida qaytarilmoqda.
 
-const countChars = (word: string) =>
-{
-  const wordWithoutSpaces = word.replace(/\s/g, ""); // Probellarni olib tashlash
-  const wordSplit = wordWithoutSpaces.split("");
-   const charCount: { [key: string]: number } = {};
+// const countChars = (word: string) =>
+// {
+//   const wordWithoutSpaces = word.replace(/\s/g, ""); // Probellarni olib tashlash
+//   const wordSplit = wordWithoutSpaces.split("");
+//    const charCount: { [key: string]: number } = {};
 
-  wordSplit.forEach((char) => {
-    if (charCount[char]) {
-      charCount[char] += 1;
-    } else {
-      charCount[char] = 1;
-    }
-  });
+//   wordSplit.forEach((char) => {
+//     if (charCount[char]) {
+//       charCount[char] += 1;
+//     } else {
+//       charCount[char] = 1;
+//     }
+//   });
 
-  return charCount;
-};
-console.log("V Task result:")
-console.log(countChars("hello"));
-console.log(countChars("Devex academy"));
+//   return charCount;
+// };
+// console.log("V Task result:")
+// console.log(countChars("hello"));
+// console.log(countChars("Devex academy"));
 
 
 
