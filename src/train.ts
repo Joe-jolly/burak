@@ -26,26 +26,52 @@
 */
 
 /* ###########################    ###############################   ######################*/
+/** Y-TASK: */
+/** Shunday function yozing, uni 2 ta array parapetri bolsin. Function ikkala arrayda ham ishtirok etgan qiymatlarni bir arrayda qaytarsin
+ MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3] */
+
+const findIntersection = (arr1: number[], arr2: number[]): number[] => {
+  let result: number[] = [];
+
+  for (let i = 0; i < arr1.length; i++) {  
+    if (arr2.includes(arr1[i])) {  
+      result.push(arr1[i]);
+    }
+  }
+
+  return result; 
+};
+
+console.log(findIntersection([4, 5, 6, 7], [7, 6, 5, 8]));
+console.log(findIntersection([10, 20, 30], [40, 50, 60]));
+console.log(findIntersection([1, 1, 2, 2], [2, 2, 3, 3]));
+
+
+
+
+
+
+/* ###########################    ###############################   ######################*/
 /** X-TASK: */
 /** Shunday function yozing, uni object va string parapetrlari bolsin. Function string parametri object ichida necha marotaba takrorlanganligini qaytarsin (nested object bolsa ham sanasin)
  MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2 */
 
-const countOccurrences = (obj: Record<string, unknown>, targetKey: string): number => {
-  let count = 0;
-  for (let key in obj) {
-    if (key === targetKey) {
-      count++;
-    }
+// const countOccurrences = (obj: Record<string, unknown>, targetKey: string): number => {
+//   let count = 0;
+//   for (let key in obj) {
+//     if (key === targetKey) {
+//       count++;
+//     }
 
-    if (typeof obj[key] === "object" && obj[key] !== null) {
-      count += countOccurrences(obj[key] as Record<string, unknown>, targetKey);
-    }
-  }
-  return count; 
-};
-console.log(countOccurrences({ model: 'Bugatti', steer: { model: 'HANKOOK', size: 30 } }, 'model'));
-console.log(countOccurrences({ a: { b: { c: 'd' }, e: 'f' }, g: { c: 'c' } }, 'c'));
-console.log(countOccurrences({}, 'test'));
+//     if (typeof obj[key] === "object" && obj[key] !== null) {
+//       count += countOccurrences(obj[key] as Record<string, unknown>, targetKey);
+//     }
+//   }
+//   return count; 
+// };
+// console.log(countOccurrences({ model: 'Bugatti', steer: { model: 'HANKOOK', size: 30 } }, 'model'));
+// console.log(countOccurrences({ a: { b: { c: 'd' }, e: 'f' }, g: { c: 'c' } }, 'c'));
+// console.log(countOccurrences({}, 'test'));
 
 
 
