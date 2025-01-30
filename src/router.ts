@@ -25,6 +25,10 @@ router.get("/member/top-users", memeberController.getTopUsers);
 
 /** Product */
 router.get("/product/all", productController.getProducts);
+router.get("/product/:id",
+    memeberController.retrieveAuth,
+    productController.getProduct
+);
 
 /** Order */
 
