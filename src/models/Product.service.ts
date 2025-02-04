@@ -17,7 +17,13 @@ class ProductService {
         this.productModel = ProductModel;
         this.viewService = new ViewService();
     }
-
+    
+    
+    // req.body = POST method API, body .jsoon formatda
+    // req.param = dinamic 
+    // req.query = 
+    
+    
     /** SPA */
     public async getProducts(inquiry: ProductInquiry): Promise<Product[]>
     {
@@ -32,7 +38,7 @@ class ProductService {
         const result = await this.productModel.aggregate([
             { $match: match },
             { $sort: sort },
-            { $skip: (inquiry.page * 1 - 1) * inquiry.limit },
+            { $skip: (inquiry.page * 1 - 1) * inquiry.limit }, // 2 * 1 - 1 =
             { $limit: inquiry.limit * 1 },
         ]).exec();
         if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
