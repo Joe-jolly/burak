@@ -25,26 +25,64 @@
   Database valiadtion
 */
 
+
+/* ###########################    ###############################   ######################*/
+/** Z-TASK: */
+/** Shunday function yozing. Bu function sonlardan iborat array
+qabul qilsin. Function'ning vazifasi array tarkibidagi juft
+sonlarni topib ularni yig'disini qaytarsin.
+
+MASALAN:
+sumEvens([1, 2, 3]); return 2;
+sumEvens([1, 2, 3, 2]); return 4;
+
+Yuqoridagi misolda, bizning funktsiya
+berilayotgan array tarkibidagi sonlar ichidan faqatgina juft bo'lgan
+sonlarni topib, ularni hisoblab yig'indisini qaytarmoqda. */
+
+const sumEvens = (arr: number[]): number => {
+  let sum = 0;
+  
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      sum += arr[i];
+    }
+  }
+  
+  return sum;
+};
+
+console.log(sumEvens([1, 2, 3])); // 2
+console.log(sumEvens([1, 2, 3, 2])); // 4
+console.log(sumEvens([4, 5, 6, 7, 8])); // 18
+
+
+
+
+
+
+
+
 /* ###########################    ###############################   ######################*/
 /** Y-TASK: */
 /** Shunday function yozing, uni 2 ta array parapetri bolsin. Function ikkala arrayda ham ishtirok etgan qiymatlarni bir arrayda qaytarsin
  MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3] */
 
-const findIntersection = (arr1: number[], arr2: number[]): number[] => {
-  let result: number[] = [];
+// const findIntersection = (arr1: number[], arr2: number[]): number[] => {
+//   let result: number[] = [];
 
-  for (let i = 0; i < arr1.length; i++) {  
-    if (arr2.includes(arr1[i])) {  
-      result.push(arr1[i]);
-    }
-  }
+//   for (let i = 0; i < arr1.length; i++) {  
+//     if (arr2.includes(arr1[i])) {  
+//       result.push(arr1[i]);
+//     }
+//   }
 
-  return result; 
-};
+//   return result; 
+// };
 
-console.log(findIntersection([4, 5, 6, 7], [7, 6, 5, 8]));
-console.log(findIntersection([10, 20, 30], [40, 50, 60]));
-console.log(findIntersection([1, 1, 2, 2], [2, 2, 3, 3]));
+// console.log(findIntersection([4, 5, 6, 7], [7, 6, 5, 8]));
+// console.log(findIntersection([10, 20, 30], [40, 50, 60]));
+// console.log(findIntersection([1, 1, 2, 2], [2, 2, 3, 3]));
 
 
 
