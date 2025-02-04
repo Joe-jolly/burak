@@ -1,7 +1,7 @@
 import mongoose, {Schema} from "mongoose";
 import { OrderStatus } from "../libs/enum/order.enum";
 
-const orderChema = new Schema({
+const orderSchema = new Schema({
     orderTotal: {
         type: Number,
         required: true,
@@ -14,7 +14,8 @@ const orderChema = new Schema({
     
     orderStatus: {
         type: String,
-        enum: OrderStatus.PAUSE
+        enum: OrderStatus.PAUSE,
+        default: OrderStatus.PAUSE,
     },
     
     memberId: {
@@ -26,4 +27,4 @@ const orderChema = new Schema({
     { timestamps: true }
 );
 
-export default mongoose.model("Order", orderChema);
+export default mongoose.model("Order", orderSchema);
