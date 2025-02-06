@@ -25,6 +25,40 @@
   Database valiadtion
 */
 
+/* ###########################    ###############################   ######################*/
+/** ZA-TASK: */
+/**Shunday function yozing, u array ichidagi objectlarni “age” qiymati boyicha sortlab bersin. 
+MASALAN: sortByAge([{age:23}, {age:21}, {age:13}]) return [{age:13}, {age:21}, {age:23}] */
+
+
+// ascending order
+const sortByAgeDescendingAsc = (arr: { age: number }[]): { age: number }[] => {
+  return arr.sort((a, b) => a.age - b.age);
+};
+
+// descending order
+const sortByAgeDescendingDesc = (arr: { age: number }[]): { age: number }[] => {
+  return arr.sort((a, b) => b.age - a.age);
+};
+
+console.log("ascending order:")
+console.log(sortByAgeDescendingAsc([{ age: 23 }, { age: 21 }, { age: 13 }])); 
+// return [{ age: 23 }, { age: 21 }, { age: 13 }]
+
+console.log("descending order:")
+console.log(sortByAgeDescendingDesc([{ age: 40 }, { age: 20 }, { age: 30 }])); 
+// return [{ age: 40 }, { age: 30 }, { age: 20 }]
+
+
+
+
+
+
+
+
+
+
+
 
 /* ###########################    ###############################   ######################*/
 /** Z-TASK: */
@@ -40,21 +74,21 @@ Yuqoridagi misolda, bizning funktsiya
 berilayotgan array tarkibidagi sonlar ichidan faqatgina juft bo'lgan
 sonlarni topib, ularni hisoblab yig'indisini qaytarmoqda. */
 
-const sumEvens = (arr: number[]): number => {
-  let sum = 0;
+// const sumEvens = (arr: number[]): number => {
+//   let sum = 0;
   
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] % 2 === 0) {
-      sum += arr[i];
-    }
-  }
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] % 2 === 0) {
+//       sum += arr[i];
+//     }
+//   }
   
-  return sum;
-};
+//   return sum;
+// };
 
-console.log(sumEvens([1, 2, 3])); // 2
-console.log(sumEvens([1, 2, 3, 2])); // 4
-console.log(sumEvens([4, 5, 6, 7, 8])); // 18
+// console.log(sumEvens([1, 2, 3])); // 2
+// console.log(sumEvens([1, 2, 3, 2])); // 4
+// console.log(sumEvens([4, 5, 6, 7, 8])); // 18
 
 
 
