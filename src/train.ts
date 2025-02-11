@@ -26,35 +26,56 @@
 */
 
 /* ###########################    ###############################   ######################*/
+/** ZC-TASK: */
+/** Shunday function yozing, uni number parametri bolsin va function qabul parametrni selsiy miqdori sifatida qabul qilib uni farenhitga ozgartirib bersin
+MASALAN: celsiusToFahrenheit(0) return 32 */
+
+// my version
+const celsius = (num: number) =>
+{
+  const celsiusToFahrenheit = (num * 1.8 + 32);
+  
+  return celsiusToFahrenheit;
+}
+console.log("Celsius in Fahrenheit:", celsius(0));
+console.log("Celsius in Fahrenheit:", celsius(23));
+
+console.log("-------- // --------");
+
+// Modified version via ChatGPT
+const celsiusToFahrenheit = (num: number): number => {
+  return (num * 1.8) + 32;
+};
+
+console.log("Celsius in Fahrenheit:", celsiusToFahrenheit(0)); // 32
+console.log("Celsius in Fahrenheit:", celsiusToFahrenheit(23)); // 212
+
+
+
+
+/* ###########################    ###############################   ######################*/
 /** ZA-TASK: */
 /**Shunday function yozing, u array ichidagi objectlarni “age” qiymati boyicha sortlab bersin. 
 MASALAN: sortByAge([{age:23}, {age:21}, {age:13}]) return [{age:13}, {age:21}, {age:23}] */
 
 
-// ascending order
-const sortByAgeDescendingAsc = (arr: { age: number }[]): { age: number }[] => {
-  return arr.sort((a, b) => a.age - b.age);
-};
+// // ascending order
+// const sortByAgeDescendingAsc = (arr: { age: number }[]): { age: number }[] => {
+//   return arr.sort((a, b) => a.age - b.age);
+// };
 
-// descending order
-const sortByAgeDescendingDesc = (arr: { age: number }[]): { age: number }[] => {
-  return arr.sort((a, b) => b.age - a.age);
-};
+// // descending order
+// const sortByAgeDescendingDesc = (arr: { age: number }[]): { age: number }[] => {
+//   return arr.sort((a, b) => b.age - a.age);
+// };
 
-console.log("ascending order:")
-console.log(sortByAgeDescendingAsc([{ age: 23 }, { age: 21 }, { age: 13 }])); 
-// return [{ age: 23 }, { age: 21 }, { age: 13 }]
+// console.log("ascending order:")
+// console.log(sortByAgeDescendingAsc([{ age: 23 }, { age: 21 }, { age: 13 }])); 
+// // return [{ age: 23 }, { age: 21 }, { age: 13 }]
 
-console.log("descending order:")
-console.log(sortByAgeDescendingDesc([{ age: 40 }, { age: 20 }, { age: 30 }])); 
-// return [{ age: 40 }, { age: 30 }, { age: 20 }]
-
-
-
-
-
-
-
+// console.log("descending order:")
+// console.log(sortByAgeDescendingDesc([{ age: 40 }, { age: 20 }, { age: 30 }])); 
+// // return [{ age: 40 }, { age: 30 }, { age: 20 }]
 
 
 
