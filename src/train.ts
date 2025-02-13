@@ -26,29 +26,60 @@
 */
 
 /* ###########################    ###############################   ######################*/
+/** ZD-TASK: */
+/**Shunday function yozing, uni number, array va number parametrlari bolsin va berilgan 1-parametr numberga teng indexni array ichidan topib 3-parametrdagi raqam bilan almashtirib yangilangan arrayni qaytarsin
+MASALAN: changeNumberInArray(1, [1,3,7,2], 2) return [1,2,7,2] */
+
+function changeNumberInArray(index: number, arr: number[], newValue: number): number[] {
+  // Indeks massiv chegarasidan chiqmaganligini tekshiramiz
+  if (index < 0 || index >= arr.length) {
+    console.log("Xatolik: Index massiv chegarasidan tashqarida!");
+    return arr; // Asl massivni qaytarib qo'yamiz
+  }
+
+  // Yangi massiv yaratamiz (aslini o‘zgartirmaslik uchun)
+  let newArr = [...arr];
+
+  // Berilgan indeksdagi elementni almashtiramiz
+  newArr[index] = newValue;
+
+  // Yangilangan massivni qaytaramiz
+  return newArr;
+}
+
+console.log(changeNumberInArray(1, [1,3,7,2], 2)); // [1,2,7,2]
+console.log(changeNumberInArray(3, [5,6,7,8], 10)); // [5,6,7,10]
+console.log(changeNumberInArray(4, [5,6,7,8], 10)); // Xatolik
+
+
+
+
+
+
+/* ###########################    ###############################   ######################*/
 /** ZC-TASK: */
 /** Shunday function yozing, uni number parametri bolsin va function qabul parametrni selsiy miqdori sifatida qabul qilib uni farenhitga ozgartirib bersin
 MASALAN: celsiusToFahrenheit(0) return 32 */
 
-// my version
-const celsius = (num: number) =>
-{
-  const celsiusToFahrenheit = (num * 1.8 + 32);
+// // my version
+// const celsius = (num: number) =>
+// {
+//   const celsiusToFahrenheit = (num * 1.8 + 32);
   
-  return celsiusToFahrenheit;
-}
-console.log("Celsius in Fahrenheit:", celsius(0));
-console.log("Celsius in Fahrenheit:", celsius(23));
+//   return celsiusToFahrenheit;
+// }
+// console.log("Celsius in Fahrenheit:", celsius(0));
+// console.log("Celsius in Fahrenheit:", celsius(23));
 
-console.log("-------- // --------");
+// console.log("-------- // --------");
 
-// Modified version via ChatGPT
-const celsiusToFahrenheit = (num: number): number => {
-  return (num * 1.8) + 32;
-};
+// // Modified version via ChatGPT
+// const celsiusToFahrenheit = (num: number): number => {
+//   return (num * 1.8) + 32;
+// };
 
-console.log("Celsius in Fahrenheit:", celsiusToFahrenheit(0)); // 32
-console.log("Celsius in Fahrenheit:", celsiusToFahrenheit(23)); // 212
+// console.log("Celsius in Fahrenheit:", celsiusToFahrenheit(0)); // 32
+// console.log("Celsius in Fahrenheit:", celsiusToFahrenheit(23)); // 212
 
 
 
