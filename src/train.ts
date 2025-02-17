@@ -26,30 +26,59 @@
 */
 
 /* ###########################    ###############################   ######################*/
+/** ZE-TASK: */
+/**Shunday function yozing, uni  string parametri bolsin. String ichida takrorlangan harflarni olib tashlab qolganini qaytarsin
+MASALAN: removeDuplicate('stringg') return 'string' */
+
+function removeDuplicate(str: string) {
+    let uniqueChars = new Set(); // Takrorlanmagan harflarni saqlash uchun Set ishlatamiz
+    let result = '';
+
+    for (let char of str) {
+        if (!uniqueChars.has(char)) { // Agar char Set ichida bo'lmasa, qo'shamiz
+            uniqueChars.add(char);
+            result += char; // Natijaga qo'shamiz
+        }
+    }
+
+    return result;
+}
+
+console.log(removeDuplicate('stringg')); // 'string'
+console.log(removeDuplicate('aabbcc'));  // 'abc'
+console.log(removeDuplicate('hello'));   // 'helo'
+
+
+
+
+
+
+
+/* ###########################    ###############################   ######################*/
 /** ZD-TASK: */
 /**Shunday function yozing, uni number, array va number parametrlari bolsin va berilgan 1-parametr numberga teng indexni array ichidan topib 3-parametrdagi raqam bilan almashtirib yangilangan arrayni qaytarsin
 MASALAN: changeNumberInArray(1, [1,3,7,2], 2) return [1,2,7,2] */
 
-function changeNumberInArray(index: number, arr: number[], newValue: number): number[] {
-  // Indeks massiv chegarasidan chiqmaganligini tekshiramiz
-  if (index < 0 || index >= arr.length) {
-    console.log("Xatolik: Index massiv chegarasidan tashqarida!");
-    return arr; // Asl massivni qaytarib qo'yamiz
-  }
+// function changeNumberInArray(index: number, arr: number[], newValue: number): number[] {
+//   // Indeks massiv chegarasidan chiqmaganligini tekshiramiz
+//   if (index < 0 || index >= arr.length) {
+//     console.log("Xatolik: Index massiv chegarasidan tashqarida!");
+//     return arr; // Asl massivni qaytarib qo'yamiz
+//   }
 
-  // Yangi massiv yaratamiz (aslini o‘zgartirmaslik uchun)
-  let newArr = [...arr];
+//   // Yangi massiv yaratamiz (aslini o‘zgartirmaslik uchun)
+//   let newArr = [...arr];
 
-  // Berilgan indeksdagi elementni almashtiramiz
-  newArr[index] = newValue;
+//   // Berilgan indeksdagi elementni almashtiramiz
+//   newArr[index] = newValue;
 
-  // Yangilangan massivni qaytaramiz
-  return newArr;
-}
+//   // Yangilangan massivni qaytaramiz
+//   return newArr;
+// }
 
-console.log(changeNumberInArray(1, [1,3,7,2], 2)); // [1,2,7,2]
-console.log(changeNumberInArray(3, [5,6,7,8], 10)); // [5,6,7,10]
-console.log(changeNumberInArray(4, [5,6,7,8], 10)); // Xatolik
+// console.log(changeNumberInArray(1, [1,3,7,2], 2)); // [1,2,7,2]
+// console.log(changeNumberInArray(3, [5,6,7,8], 10)); // [5,6,7,10]
+// console.log(changeNumberInArray(4, [5,6,7,8], 10)); // Xatolik
 
 
 
