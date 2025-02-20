@@ -26,30 +26,61 @@
 */
 
 /* ###########################    ###############################   ######################*/
+/** ZF-TASK: */
+/** Shunday function yozing, uni string parametri bolsin. String ichidagi har bir sozni bosh harflarini katta harf qilib qaytarsin lekin 1 yoki 2 harfdan iborat sozlarni esa oz holicha qoldirsin.
+MASALAN: capitalizeWords('name should be a string') return 'Name Should be a String' */
+
+function capitalizeWords(str: string): string
+{
+  let words = str.split(" "); // So'zlarni bo'laklarga ajratamiz
+  let result = "";
+
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].length > 2) {
+      result += words[i][0].toUpperCase() + words[i].slice(1); // Bosh harfni katta qilamiz
+    } else {
+      result += words[i]; // O'zgarishsiz qoldiramiz
+    }
+
+    if (i < words.length - 1) {
+      result += " "; // So'zlar orasida bo'sh joy qo'shamiz
+    }
+  }
+
+  return result;
+}
+
+console.log(capitalizeWords("name should be a string")); // "Name Should be a String"
+console.log(capitalizeWords("it is my pen")); // "it is My Pen"
+console.log(capitalizeWords("a big cat")); // "a Big Cat"
+console.log(capitalizeWords("go to the park")); // "Go to the Park"
+
+
+
+
+
+/* ###########################    ###############################   ######################*/
 /** ZE-TASK: */
 /**Shunday function yozing, uni  string parametri bolsin. String ichida takrorlangan harflarni olib tashlab qolganini qaytarsin
 MASALAN: removeDuplicate('stringg') return 'string' */
 
-function removeDuplicate(str: string) {
-    let uniqueChars = new Set(); // Takrorlanmagan harflarni saqlash uchun Set ishlatamiz
-    let result = '';
+// function removeDuplicate(str: string) {
+//     let uniqueChars = new Set(); // Takrorlanmagan harflarni saqlash uchun Set ishlatamiz
+//     let result = '';
 
-    for (let char of str) {
-        if (!uniqueChars.has(char)) { // Agar char Set ichida bo'lmasa, qo'shamiz
-            uniqueChars.add(char);
-            result += char; // Natijaga qo'shamiz
-        }
-    }
+//     for (let char of str) {
+//         if (!uniqueChars.has(char)) { // Agar char Set ichida bo'lmasa, qo'shamiz
+//             uniqueChars.add(char);
+//             result += char; // Natijaga qo'shamiz
+//         }
+//     }
 
-    return result;
-}
+//     return result;
+// }
 
-console.log(removeDuplicate('stringg')); // 'string'
-console.log(removeDuplicate('aabbcc'));  // 'abc'
-console.log(removeDuplicate('hello'));   // 'helo'
-
-
-
+// console.log(removeDuplicate('stringg')); // 'string'
+// console.log(removeDuplicate('aabbcc'));  // 'abc'
+// console.log(removeDuplicate('hello'));   // 'helo'
 
 
 
