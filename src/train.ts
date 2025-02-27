@@ -24,27 +24,55 @@
   Backend validation;
   Database valiadtion
 */
+
+/* ###########################    ###############################   ######################*/
+/** ZG-TASK: */
+/** Shunday function yozing, u berilgan array parametrni ichidagi eng katta raqamgacha tushib qolgan raqamlarni bir arrayda qaytarsin. 
+MASALAN: findDisappearedNumbers([1, 3, 4, 7]) return [2, 5, 6] */
+
+function findDisappearedNumbers(arr: number[]): number[] {
+  let maxNum = Math.max(...arr);
+  let missingNumbers: number[] = [];
+
+  for (let i = 1; i <= maxNum; i++) {
+    if (!arr.includes(i)) {
+      missingNumbers.push(i);
+    }
+  }
+
+  return missingNumbers;
+}
+
+console.log(findDisappearedNumbers([1, 3, 4, 7])); // [2, 5, 6]
+console.log(findDisappearedNumbers([2, 5, 8])); // [1, 3, 4, 6, 7]
+console.log(findDisappearedNumbers([10, 5, 3])); // [1, 2, 4, 6, 7, 8, 9]
+
+
+
+
 /* ###########################    ###############################   ######################*/
 /** ZG-TASK: */
 /**Shunday function yozing, u berilgan string parametrni snake casega otkazib qaytarsin. 
 MASALAN: capitalizeWords('name should be a string') return 'name_should_be_a_string' */
-function toSnakeCase(str: string): string {
-  let result = "";
 
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] === " ") {
-      result += "_"; // Bo'sh joyni "_" bilan almashtiramiz
-    } else {
-      result += str[i].toLowerCase(); // Barcha harflarni kichik harfga o'tkazamiz
-    }
-  }
+// function toSnakeCase(str: string): string
+// {
+//   let result = "";
 
-  return result;
-}
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] === " ") {
+//       result += "_"; // Bo'sh joyni "_" bilan almashtiramiz
+//     } else {
+//       result += str[i].toLowerCase(); // Barcha harflarni kichik harfga o'tkazamiz
+//     }
+//   }
 
-console.log(toSnakeCase("name should be a string")); // "name_should_be_a_string"
-console.log(toSnakeCase("Hello World")); // "hello_world"
-console.log(toSnakeCase("snake case converter")); // "snake_case_converter"
+//   return result;
+// }
+
+// console.log(toSnakeCase("name should be a string")); // "name_should_be_a_string"
+// console.log(toSnakeCase("Hello World")); // "hello_world"
+// console.log(toSnakeCase("snake case converter")); // "snake_case_converter"
 
 
 
