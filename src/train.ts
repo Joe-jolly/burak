@@ -26,26 +26,55 @@
 */
 
 /* ###########################    ###############################   ######################*/
+/** ZI-TASK: */
+/**Shunday function yozing, u function ishga tushgandan 3 soniyadan keyin "Hello World" ni qaytarsin.
+MASALAN: delayHelloWorld("Hello World") return "Hello World" */
+
+async function delayHelloWorld() {
+  let second = 0;
+
+  // Har 1 soniyada raqam chiqarish uchun interval
+  const interval = setInterval(() => {
+    second++;
+    console.log("sekund...");
+    console.log(second);
+  }, 1000);
+
+  // 3 soniyadan keyin "Hello World" ni chiqarish
+  await new Promise(resolve => setTimeout(resolve, 3000));
+
+  // Intervalni to‘xtatish
+  clearInterval(interval); 
+  console.log("Hello World");
+}
+
+delayHelloWorld();
+
+
+
+
+
+/* ###########################    ###############################   ######################*/
 /** ZG-TASK: */
 /** Shunday function yozing, u berilgan array parametrni ichidagi eng katta raqamgacha tushib qolgan raqamlarni bir arrayda qaytarsin. 
 MASALAN: findDisappearedNumbers([1, 3, 4, 7]) return [2, 5, 6] */
 
-function findDisappearedNumbers(arr: number[]): number[] {
-  let maxNum = Math.max(...arr);
-  let missingNumbers: number[] = [];
+// function findDisappearedNumbers(arr: number[]): number[] {
+//   let maxNum = Math.max(...arr);
+//   let missingNumbers: number[] = [];
 
-  for (let i = 1; i <= maxNum; i++) {
-    if (!arr.includes(i)) {
-      missingNumbers.push(i);
-    }
-  }
+//   for (let i = 1; i <= maxNum; i++) {
+//     if (!arr.includes(i)) {
+//       missingNumbers.push(i);
+//     }
+//   }
 
-  return missingNumbers;
-}
+//   return missingNumbers;
+// }
 
-console.log(findDisappearedNumbers([1, 3, 4, 7])); // [2, 5, 6]
-console.log(findDisappearedNumbers([2, 5, 8])); // [1, 3, 4, 6, 7]
-console.log(findDisappearedNumbers([10, 5, 3])); // [1, 2, 4, 6, 7, 8, 9]
+// console.log(findDisappearedNumbers([1, 3, 4, 7])); // [2, 5, 6]
+// console.log(findDisappearedNumbers([2, 5, 8])); // [1, 3, 4, 6, 7]
+// console.log(findDisappearedNumbers([10, 5, 3])); // [1, 2, 4, 6, 7, 8, 9]
 
 
 
