@@ -26,29 +26,63 @@
 */
 
 /* ###########################    ###############################   ######################*/
+/** ZJ-TASK: */
+/**Shunday function yozing, u berilgan array ichidagi
+raqamlarni qiymatini hisoblab qaytarsin.
+
+MASALAN: reduceNestedArray([1, [1, 2, [4]]]); return 8;
+
+Yuqoridagi misolda, array nested bo'lgan holdatda ham,
+bizning function ularning yig'indisini hisoblab qaytarmoqda. */
+
+function reduceNestedArray(arr: any) {
+  let sum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      // Agar element array bo'lsa, rekursiv ravishda uni tekshiramiz
+      sum += reduceNestedArray(arr[i]);
+    } else {
+      // Agar element raqam bo'lsa, uni yig'indiga qo'shamiz
+      sum += arr[i];
+    }
+  }
+
+  return sum;
+}
+
+console.log(reduceNestedArray([1, [1, 2, [4]]])); // 8
+
+
+
+
+
+
+
+/* ###########################    ###############################   ######################*/
 /** ZI-TASK: */
 /**Shunday function yozing, u function ishga tushgandan 3 soniyadan keyin "Hello World" ni qaytarsin.
 MASALAN: delayHelloWorld("Hello World") return "Hello World" */
 
-async function delayHelloWorld() {
-  let second = 0;
+// async function delayHelloWorld() {
+//   let second = 0;
 
-  // Har 1 soniyada raqam chiqarish uchun interval
-  const interval = setInterval(() => {
-    second++;
-    console.log("sekund...");
-    console.log(second);
-  }, 1000);
+//   // Har 1 soniyada raqam chiqarish uchun interval
+//   const interval = setInterval(() => {
+//     second++;
+//     console.log("sekund...");
+//     console.log(second);
+//   }, 1000);
 
-  // 3 soniyadan keyin "Hello World" ni chiqarish
-  await new Promise(resolve => setTimeout(resolve, 3000));
+//   // 3 soniyadan keyin "Hello World" ni chiqarish
+//   await new Promise(resolve => setTimeout(resolve, 3000));
 
-  // Intervalni to‘xtatish
-  clearInterval(interval); 
-  console.log("Hello World");
-}
+//   // Intervalni to‘xtatish
+//   clearInterval(interval); 
+//   console.log("Hello World");
+// }
 
-delayHelloWorld();
+// delayHelloWorld();
 
 
 
