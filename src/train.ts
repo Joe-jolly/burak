@@ -26,6 +26,28 @@
 */
 
 /* ###########################    ###############################   ######################*/
+/** ZK-TASK: */
+/**Shunday function yozing, u har soniyada bir marta consolega 1 dan 5 gacha bolgan raqamlarni chop etsin va 5 soniyadan keyin ishini toxtatsin.
+MASALAN: printNumbers() */
+
+async function printNumbers() {
+  let second = 0;
+  const interval = setInterval(() => {
+    second++;
+    console.log(second, second === 1 ? 'second' : 'seconds');
+  }, 1000);
+  
+  await new Promise(resolve => setTimeout(resolve, 6000));
+  
+  clearInterval(interval);
+  console.log('Done! The counting process is finished!')
+}
+printNumbers();
+
+
+
+
+/* ###########################    ###############################   ######################*/
 /** ZJ-TASK: */
 /**Shunday function yozing, u berilgan array ichidagi
 raqamlarni qiymatini hisoblab qaytarsin.
@@ -35,25 +57,23 @@ MASALAN: reduceNestedArray([1, [1, 2, [4]]]); return 8;
 Yuqoridagi misolda, array nested bo'lgan holdatda ham,
 bizning function ularning yig'indisini hisoblab qaytarmoqda. */
 
-function reduceNestedArray(arr: any) {
-  let sum = 0;
+// function reduceNestedArray(arr: any) {
+//   let sum = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-    if (Array.isArray(arr[i])) {
-      // Agar element array bo'lsa, rekursiv ravishda uni tekshiramiz
-      sum += reduceNestedArray(arr[i]);
-    } else {
-      // Agar element raqam bo'lsa, uni yig'indiga qo'shamiz
-      sum += arr[i];
-    }
-  }
+//   for (let i = 0; i < arr.length; i++) {
+//     if (Array.isArray(arr[i])) {
+//       // Agar element array bo'lsa, rekursiv ravishda uni tekshiramiz
+//       sum += reduceNestedArray(arr[i]);
+//     } else {
+//       // Agar element raqam bo'lsa, uni yig'indiga qo'shamiz
+//       sum += arr[i];
+//     }
+//   }
 
-  return sum;
-}
+//   return sum;
+// }
 
-console.log(reduceNestedArray([1, [1, 2, [4]]])); // 8
-
-
+// console.log(reduceNestedArray([1, [1, 2, [4]]])); // 8
 
 
 
