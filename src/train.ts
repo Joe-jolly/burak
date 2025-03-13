@@ -24,22 +24,50 @@
   Backend validation;
   Database valiadtion
 */
+
+/* ###########################    ###############################   ######################*/
+/** ZM-TASK: */
+/** 
+Shunday function yozing, va bu function parametr
+sifatida raqamlarni qabul qilsin. Bu function qabul qilingan
+raqamlarni orqasiga o'girib qaytarsin
+
+MASALAN: reverseInteger(123456789); return 987654321;
+
+Yuqoridagi misolda, function kiritilgan raqamlarni orqasiga
+o'girib (reverse) qilib qaytarmoqda.
+ */
+
+function reverseInteger(num: number): number {
+    let numStr = num.toString();
+
+    let reversedStr = numStr.split('').reverse().join('');
+
+    let reversedNum = Number(reversedStr);
+
+    return reversedNum;
+}
+
+console.log(reverseInteger(123456789)); // 987654321
+console.log(reverseInteger(5001));      // 1005
+console.log(reverseInteger(900));       // 9
+
+
+
+
 /* ###########################    ###############################   ######################*/
 /** ZL-TASK: */
 /** Shunday function yozing, u parametrda berilgan stringni kebab casega otkazib qaytarsin. Bosh harflarni kichik harflarga ham otkazsin.
 MASALAN: stringToKebab(“I love Kebab”) return “i-love-kebab” */
 
-function stringToKebab(str: string): string {
-  return str.trim()
-    .toLowerCase()
-    .replace(/[^a-z0-9\s]/g, '') // Maxsus belgilarni olib tashlaydi
-    .replace(/\s+/g, '-'); // Bo'sh joylarni '-' bilan almashtiradi
-}
-console.log(stringToKebab("I love Kebab"));
-console.log(stringToKebab("Hello @World! This is #JavaScript"));  
-
-
-
+// function stringToKebab(str: string): string {
+//   return str.trim()
+//     .toLowerCase()
+//     .replace(/[^a-z0-9\s]/g, '') // Maxsus belgilarni olib tashlaydi
+//     .replace(/\s+/g, '-'); // Bo'sh joylarni '-' bilan almashtiradi
+// }
+// console.log(stringToKebab("I love Kebab"));
+// console.log(stringToKebab("Hello @World! This is #JavaScript"));  
 
 
 
