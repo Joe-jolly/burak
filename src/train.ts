@@ -26,6 +26,32 @@
 */
 
 /* ###########################    ###############################   ######################*/
+/** ZM-TASK: 
+Shunday function yozing, uni array va number parametri bolsin. Ikkinchi parametrda berilgan raqamli indexgacha arrayni orqasiga ogirib qaytarsin.
+MASALAN: rotateArray([1, 2, 3, 4, 5, 6], 3) return [5, 6, 1, 2, 3, 4]
+*/
+
+function rotateArray(arr: number[], index: number): number[] {
+  // 1. Oxiridan index keltirilgacha elementni ajratib oldik
+  let lastPart = arr.slice(-index); 
+  
+  // 2. Qolgan elementlarni ajratib oldik
+  let firstPart = arr.slice(0, arr.length - index);
+  
+  // 3. Ikki qismni birlashtirdik
+  return [...lastPart, ...firstPart];
+}
+
+console.log(rotateArray([1, 2, 3, 4, 5, 6], 3)); 
+
+
+
+
+
+
+
+
+/* ###########################    ###############################   ######################*/
 /** ZM-TASK: */
 /** 
 Shunday function yozing, va bu function parametr
@@ -38,19 +64,19 @@ Yuqoridagi misolda, function kiritilgan raqamlarni orqasiga
 o'girib (reverse) qilib qaytarmoqda.
  */
 
-function reverseInteger(num: number): number {
-    let numStr = num.toString();
+// function reverseInteger(num: number): number {
+//     let numStr = num.toString();
 
-    let reversedStr = numStr.split('').reverse().join('');
+//     let reversedStr = numStr.split('').reverse().join('');
 
-    let reversedNum = Number(reversedStr);
+//     let reversedNum = Number(reversedStr);
 
-    return reversedNum;
-}
+//     return reversedNum;
+// }
 
-console.log(reverseInteger(123456789)); // 987654321
-console.log(reverseInteger(5001));      // 1005
-console.log(reverseInteger(900));       // 9
+// console.log(reverseInteger(123456789)); // 987654321
+// console.log(reverseInteger(5001));      // 1005
+// console.log(reverseInteger(900));       // 9
 
 
 
