@@ -26,33 +26,83 @@
 */
 
 /* ###########################    ###############################   ######################*/
+/** ZP-TASK:
+Shunday function yozing, u 2 ta array parametr qabul qilsin.
+Siz bu ikki arrayning qiymatlari o'xshash bo'lishini 
+(ya'ni, ularning barcha elementlari bir xil bo'lishini) tekshirishingiz kerak.
 
-/** ZO-TASK:
+MASALAN:
+areArraysEqual([1, 2, 3], [3, 1, 2]) // true
+areArraysEqual([1, 2, 3], [3, 1, 2, 1]) // true
+areArraysEqual([1, 2, 3], [4, 1, 2]) // false
+ */
 
-Shunday function yozing, u parametrdagi string ichidagi qavslar miqdori balansda ekanligini aniqlasin. Ya'ni ochish("(") va yopish(")") qavslar soni bir xil bolishi kerak.
-MASALAN: areParenthesesBalanced("string()ichida(qavslar)soni()balansda") return true */
 
-function areParenthesesBalanced(str: string): boolean {
-  let count = 0;
+function areArraysEqual(arr1: number[], arr2: number[]): boolean {
+  if (arr1.length !== arr2.length) return false; // Agar uzunliklar har xil bo‘lsa, bevosita false qaytaramiz
 
-  for (let char of str) {
-    if (char === "(") {
-      count++;  // Ochuvchi qavs bo‘lsa, +1
-    } else if (char === ")") {
-      count--;  // Yopuvchi qavs bo‘lsa, -1
-      if (count < 0) return false;  // Agar oldin yopilsa, noto‘g‘ri
+  let countMap1 = new Map();
+  let countMap2 = new Map();
+
+  // 1. arr1 dagi har bir element necha marta qatnashganligini hisoblaymiz
+  for (let num of arr1) {
+    countMap1.set(num, (countMap1.get(num) || 0) + 1);
+  }
+
+  // 2. arr2 dagi har bir element necha marta qatnashganligini hisoblaymiz
+  for (let num of arr2) {
+    countMap2.set(num, (countMap2.get(num) || 0) + 1);
+  }
+
+  // 3. Ikkala mapni taqqoslaymiz
+  for (let [key, value] of countMap1) {
+    if (countMap2.get(key) !== value) {
+      return false; // Agar qiymatlar bir xil bo'lmasa, false qaytaramiz
     }
   }
 
-  return count === 0;  // Agar oxirida balansda bo‘lsa, true
+  return true;
 }
 
-// ✅ Test qilish
-console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); // true
-console.log(areParenthesesBalanced("(()())")); // true
-console.log(areParenthesesBalanced("(hello(world))")); // true
-console.log(areParenthesesBalanced("((())")); // false (bitta yopish yetishmaydi)
-console.log(areParenthesesBalanced("())(")); // false (yopish oldin kelgan)
+//  Test qilish
+console.log(areArraysEqual([1, 2, 3], [3, 1, 2]));    // true
+console.log(areArraysEqual([1, 2, 3], [3, 1, 2, 1])); // false
+console.log(areArraysEqual([1, 2, 3], [4, 1, 2]));    // false
+console.log(areArraysEqual([5, 5, 5], [5, 5, 5, 5])); // false
+console.log(areArraysEqual([1, 2, 2], [1, 1, 2]));    // false
+console.log(areArraysEqual([1, 2, 3], [1, 2]));      // false
+
+
+
+
+
+
+/* ###########################    ###############################   ######################*/
+/** ZO-TASK:
+Shunday function yozing, u parametrdagi string ichidagi qavslar miqdori balansda ekanligini aniqlasin. Ya'ni ochish("(") va yopish(")") qavslar soni bir xil bolishi kerak.
+MASALAN: areParenthesesBalanced("string()ichida(qavslar)soni()balansda") return true */
+
+// function areParenthesesBalanced(str: string): boolean {
+//   let count = 0;
+
+//   for (let char of str) {
+//     if (char === "(") {
+//       count++;  // Ochuvchi qavs bo‘lsa, +1
+//     } else if (char === ")") {
+//       count--;  // Yopuvchi qavs bo‘lsa, -1
+//       if (count < 0) return false;  // Agar oldin yopilsa, noto‘g‘ri
+//     }
+//   }
+
+//   return count === 0;  // Agar oxirida balansda bo‘lsa, true
+// }
+
+// // Test qilish
+// console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); // true
+// console.log(areParenthesesBalanced("(()())")); // true
+// console.log(areParenthesesBalanced("(hello(world))")); // true
+// console.log(areParenthesesBalanced("((())")); // false (bitta yopish yetishmaydi)
+// console.log(areParenthesesBalanced("())(")); // false (yopish oldin kelgan)
 
 
 
@@ -76,9 +126,6 @@ MASALAN: rotateArray([1, 2, 3, 4, 5, 6], 3) return [5, 6, 1, 2, 3, 4]
 // }
 
 // console.log(rotateArray([1, 2, 3, 4, 5, 6], 3)); 
-
-
-
 
 
 
@@ -724,6 +771,8 @@ MASALAN: palindromCheck("dad") return true;  palindromCheck("son") return false;
 // console.log(palindromWord("dad"));
 
 
+
+
 /* ###########################    ###############################   ######################*/
 
 /** M TASK */
@@ -741,8 +790,11 @@ MASALAN: getSquareNumbers([1, 2, 3]) return [{number: 1, square: 1}, {number: 2,
 //   return result; // Hosil bo'lgan arrayni qaytaramiz
 // };
 
-// console.log(getSquareNumbers([1, 2, 3])); 
+// console.log(getSquareNumbers([1, 2, 3]));
 // // Natija: [{ number: 1, square: 1 }, { number: 2, square: 4 }, { number: 3, square: 9 }]
+
+
+
 
 
 /* ###########################    ###############################   ######################*/
@@ -766,8 +818,6 @@ MASALAN: reverseSentence("we like coding") return "ew ekil gnidoc"; */
 /* ###########################    ###############################   ######################*/
 
 /** K-TASK:  */
-
-
   // const countVowels = (text: string): number => {
   //   const vowels = 'aeiou'; 
   //   let count = 0; 
@@ -819,22 +869,22 @@ MASALAN: findLongestWord("I come from Uzbekistan") return "Uzbekistan" */
 MASALAN: majorityElement([1,2,3,4,5,4,3,4]) return 4 */
 
 // const majorityElement = (arr: number[]): number | undefined => {
-//   const countMap: { [key: number]: number } = {}; 
+//   const countMap: { [key: number]: number } = {};
 
 //   for (let num of arr) {
-//     countMap[num] = (countMap[num] || 0) + 1; 
+//     countMap[num] = (countMap[num] || 0) + 1;
 //   }
 
-//   let maxCount = 0; 
-//   let majorityNum: number | undefined = undefined; 
+//   let maxCount = 0;
+//   let majorityNum: number | undefined = undefined;
 
 //   for (let num in countMap) {
 //     if (countMap[num] > maxCount) {
 //       maxCount = countMap[num];
-//       majorityNum = Number(num); 
+//       majorityNum = Number(num);
 //     }
 //   }
-//   return majorityNum; 
+//   return majorityNum;
 // };
 
 
@@ -863,11 +913,13 @@ MASALAN: getDigits("m14i1t") return qiladi "141" */
 // const getDigits = (text: string) => {
 //   const newGetDigits = text.split('').filter((char) => !isNaN(Number(char))).join('');
 //   return newGetDigits;
-// }; 
+// };
 
 // console.log(getDigits("m14i1t"));
 
 // console.log(getDigits("hb828b0d2"));
+
+
 
 
 /* ###########################    ###############################   ######################*/
