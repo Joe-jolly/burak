@@ -26,6 +26,38 @@
 */
 
 /* ###########################    ###############################   ######################*/
+/** ZQ-TASK:
+
+Shunday function yozing, u parametridagi array ichida 2 marta qaytarilgan sonlarni alohida araryda qaytarsin.
+MASALAN: findDuplicates([1,2,3,4,5,4,3,4]) return [3, 4] */
+
+function findDuplicates(arr: number[]): number[] {
+  let countMap = new Map<number, number>();
+  let result: number[] = [];
+
+  for (let num of arr) {
+    countMap.set(num, (countMap.get(num) || 0) + 1);
+  }
+
+  for (let [key, value] of countMap) {
+    if (value >= 2) {
+      result.push(key);
+    }
+  }
+
+  return result;
+}
+
+// ✅ Test
+console.log(findDuplicates([1, 2, 3, 4, 5, 4, 3, 4])); // [3, 4]
+console.log(findDuplicates([1, 1, 2, 3, 4, 2, 5, 6, 7])); // [1, 2]
+console.log(findDuplicates([1, 2, 3, 4, 5])); // []
+console.log(findDuplicates([9, 9, 8, 8, 7, 6, 6])); // [9, 8, 6]
+
+
+
+
+/* ###########################    ###############################   ######################*/
 /** ZP-TASK:
 Shunday function yozing, u 2 ta array parametr qabul qilsin.
 Siz bu ikki arrayning qiymatlari o'xshash bo'lishini 
@@ -38,39 +70,39 @@ areArraysEqual([1, 2, 3], [4, 1, 2]) // false
  */
 
 
-function areArraysEqual(arr1: number[], arr2: number[]): boolean {
-  if (arr1.length !== arr2.length) return false; // Agar uzunliklar har xil bo‘lsa, bevosita false qaytaramiz
+// function areArraysEqual(arr1: number[], arr2: number[]): boolean {
+//   if (arr1.length !== arr2.length) return false; // Agar uzunliklar har xil bo‘lsa, bevosita false qaytaramiz
 
-  let countMap1 = new Map();
-  let countMap2 = new Map();
+//   let countMap1 = new Map();
+//   let countMap2 = new Map();
 
-  // 1. arr1 dagi har bir element necha marta qatnashganligini hisoblaymiz
-  for (let num of arr1) {
-    countMap1.set(num, (countMap1.get(num) || 0) + 1);
-  }
+//   // 1. arr1 dagi har bir element necha marta qatnashganligini hisoblaymiz
+//   for (let num of arr1) {
+//     countMap1.set(num, (countMap1.get(num) || 0) + 1);
+//   }
 
-  // 2. arr2 dagi har bir element necha marta qatnashganligini hisoblaymiz
-  for (let num of arr2) {
-    countMap2.set(num, (countMap2.get(num) || 0) + 1);
-  }
+//   // 2. arr2 dagi har bir element necha marta qatnashganligini hisoblaymiz
+//   for (let num of arr2) {
+//     countMap2.set(num, (countMap2.get(num) || 0) + 1);
+//   }
 
-  // 3. Ikkala mapni taqqoslaymiz
-  for (let [key, value] of countMap1) {
-    if (countMap2.get(key) !== value) {
-      return false; // Agar qiymatlar bir xil bo'lmasa, false qaytaramiz
-    }
-  }
+//   // 3. Ikkala mapni taqqoslaymiz
+//   for (let [key, value] of countMap1) {
+//     if (countMap2.get(key) !== value) {
+//       return false; // Agar qiymatlar bir xil bo'lmasa, false qaytaramiz
+//     }
+//   }
 
-  return true;
-}
+//   return true;
+// }
 
-//  Test qilish
-console.log(areArraysEqual([1, 2, 3], [3, 1, 2]));    // true
-console.log(areArraysEqual([1, 2, 3], [3, 1, 2, 1])); // false
-console.log(areArraysEqual([1, 2, 3], [4, 1, 2]));    // false
-console.log(areArraysEqual([5, 5, 5], [5, 5, 5, 5])); // false
-console.log(areArraysEqual([1, 2, 2], [1, 1, 2]));    // false
-console.log(areArraysEqual([1, 2, 3], [1, 2]));      // false
+// //  Test qilish
+// console.log(areArraysEqual([1, 2, 3], [3, 1, 2]));    // true
+// console.log(areArraysEqual([1, 2, 3], [3, 1, 2, 1])); // false
+// console.log(areArraysEqual([1, 2, 3], [4, 1, 2]));    // false
+// console.log(areArraysEqual([5, 5, 5], [5, 5, 5, 5])); // false
+// console.log(areArraysEqual([1, 2, 2], [1, 1, 2]));    // false
+// console.log(areArraysEqual([1, 2, 3], [1, 2]));      // false
 
 
 
