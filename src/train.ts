@@ -26,33 +26,66 @@
 */
 
 /* ###########################    ###############################   ######################*/
+/** ZR-TASK:
+
+Shunday function yozing, u parametridagi string ichidagi raqam va sonlarni sonini sanasin.
+MASALAN: countNumberAndLetters(“string152%\¥”) return {number:3, letter:6} */
+
+
+function countNumberAndLetters(str: string): { number: number; letter: number } {
+  let letterCount = 0;
+  let numberCount = 0;
+
+  for (let char of str) {
+    if (/[a-zA-Z]/.test(char)) {
+      letterCount++;
+    } else if (/[0-9]/.test(char)) {
+      numberCount++;
+    }
+  }
+
+  return { number: numberCount, letter: letterCount };
+}
+
+// ✅ Test
+console.log(countNumberAndLetters("string152%¥")); // { number: 3, letter: 6 }
+console.log(countNumberAndLetters("Hello1234!")); // { number: 4, letter: 5 }
+console.log(countNumberAndLetters("2024 Year!")); // { number: 4, letter: 4 }
+console.log(countNumberAndLetters("$$$")); // { number: 0, letter: 0 }
+console.log(countNumberAndLetters("a1b2c3d4")); // { number: 4, letter: 4 }
+
+
+
+
+
+/* ###########################    ###############################   ######################*/
 /** ZQ-TASK:
 
 Shunday function yozing, u parametridagi array ichida 2 marta qaytarilgan sonlarni alohida araryda qaytarsin.
 MASALAN: findDuplicates([1,2,3,4,5,4,3,4]) return [3, 4] */
 
-function findDuplicates(arr: number[]): number[] {
-  let countMap = new Map<number, number>();
-  let result: number[] = [];
+// function findDuplicates(arr: number[]): number[] {
+//   let countMap = new Map<number, number>();
+//   let result: number[] = [];
 
-  for (let num of arr) {
-    countMap.set(num, (countMap.get(num) || 0) + 1);
-  }
+//   for (let num of arr) {
+//     countMap.set(num, (countMap.get(num) || 0) + 1);
+//   }
 
-  for (let [key, value] of countMap) {
-    if (value >= 2) {
-      result.push(key);
-    }
-  }
+//   for (let [key, value] of countMap) {
+//     if (value >= 2) {
+//       result.push(key);
+//     }
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
-// ✅ Test
-console.log(findDuplicates([1, 2, 3, 4, 5, 4, 3, 4])); // [3, 4]
-console.log(findDuplicates([1, 1, 2, 3, 4, 2, 5, 6, 7])); // [1, 2]
-console.log(findDuplicates([1, 2, 3, 4, 5])); // []
-console.log(findDuplicates([9, 9, 8, 8, 7, 6, 6])); // [9, 8, 6]
+// // ✅ Test
+// console.log(findDuplicates([1, 2, 3, 4, 5, 4, 3, 4])); // [3, 4]
+// console.log(findDuplicates([1, 1, 2, 3, 4, 2, 5, 6, 7])); // [1, 2]
+// console.log(findDuplicates([1, 2, 3, 4, 5])); // []
+// console.log(findDuplicates([9, 9, 8, 8, 7, 6, 6])); // [9, 8, 6]
 
 
 
