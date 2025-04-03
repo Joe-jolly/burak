@@ -25,6 +25,36 @@
   Database valiadtion
 */
 
+/** ZS-TASK:
+
+Shunday function yozing, u parametridagi arrayni ichidagi 1 marta kelgan elemnetni qaytarsin.
+MASALAN: singleNumber([4, 2, 1, 2, 1]) return 4 */
+
+function singleNumber(nums: number[]): number {
+    const freqMap = new Map<number, number>();
+
+    // Har bir element necha marta uchraganini hisoblash
+    for (const num of nums) {
+        freqMap.set(num, (freqMap.get(num) || 0) + 1);
+    }
+
+    // 1 marta uchragan elementni qaytarish
+    for (const [key, value] of freqMap.entries()) {
+        if (value === 1) {
+            return key;
+        }
+    }
+
+    throw new Error("Hech qanday bitta element topilmadi!");
+}
+
+// Test
+console.log(singleNumber([4, 2, 1, 2, 1])); // 4
+
+
+
+
+
 /* ###########################    ###############################   ######################*/
 /** ZR-TASK:
 
@@ -32,27 +62,27 @@ Shunday function yozing, u parametridagi string ichidagi raqam va sonlarni sonin
 MASALAN: countNumberAndLetters(“string152%\¥”) return {number:3, letter:6} */
 
 
-function countNumberAndLetters(str: string): { number: number; letter: number } {
-  let letterCount = 0;
-  let numberCount = 0;
+// function countNumberAndLetters(str: string): { number: number; letter: number } {
+//   let letterCount = 0;
+//   let numberCount = 0;
 
-  for (let char of str) {
-    if (/[a-zA-Z]/.test(char)) {
-      letterCount++;
-    } else if (/[0-9]/.test(char)) {
-      numberCount++;
-    }
-  }
+//   for (let char of str) {
+//     if (/[a-zA-Z]/.test(char)) {
+//       letterCount++;
+//     } else if (/[0-9]/.test(char)) {
+//       numberCount++;
+//     }
+//   }
 
-  return { number: numberCount, letter: letterCount };
-}
+//   return { number: numberCount, letter: letterCount };
+// }
 
-// ✅ Test
-console.log(countNumberAndLetters("string152%¥")); // { number: 3, letter: 6 }
-console.log(countNumberAndLetters("Hello1234!")); // { number: 4, letter: 5 }
-console.log(countNumberAndLetters("2024 Year!")); // { number: 4, letter: 4 }
-console.log(countNumberAndLetters("$$$")); // { number: 0, letter: 0 }
-console.log(countNumberAndLetters("a1b2c3d4")); // { number: 4, letter: 4 }
+// // ✅ Test
+// console.log(countNumberAndLetters("string152%¥")); // { number: 3, letter: 6 }
+// console.log(countNumberAndLetters("Hello1234!")); // { number: 4, letter: 5 }
+// console.log(countNumberAndLetters("2024 Year!")); // { number: 4, letter: 4 }
+// console.log(countNumberAndLetters("$$$")); // { number: 0, letter: 0 }
+// console.log(countNumberAndLetters("a1b2c3d4")); // { number: 4, letter: 4 }
 
 
 
