@@ -25,31 +25,66 @@
   Database valiadtion
 */
 
+/* ###########################    ###############################   ######################*/
+/**ZT-TASK:
+
+Shunday function yozing, u parametridagi string ichida 1 martadan ortiq qaytarilmagan birinchi harf indeksini qaytarsin.
+MASALAN: firstUniqueCharIndex(“stamp”) return 0
+ */
+
+function firstUniqueCharIndex(str: string): number {
+  const charCount = new Map<string, number>();
+
+  // 1-qadam: harflar necha marta uchraganini hisoblaymiz
+  for (const char of str) {
+    charCount.set(char, (charCount.get(char) || 0) + 1);
+  }
+
+  // 2-qadam: birinchi 1 marta uchragan harfning indeksini topamiz
+  for (let i = 0; i < str.length; i++) {
+    if (charCount.get(str[i]) === 1) {
+      return i;
+    }
+  }
+
+  return -1; // Agar topilmasa
+}
+
+// Test
+console.log(firstUniqueCharIndex("stamp")); // 0
+console.log(firstUniqueCharIndex("letter")); // 0 ('t' birinchi marta 1 marta uchraydi)
+console.log(firstUniqueCharIndex("aabbcc")); // -1 (hech biri unique emas)
+
+
+
+
+
+/* ###########################    ###############################   ######################*/
 /** ZS-TASK:
 
 Shunday function yozing, u parametridagi arrayni ichidagi 1 marta kelgan elemnetni qaytarsin.
 MASALAN: singleNumber([4, 2, 1, 2, 1]) return 4 */
 
-function singleNumber(nums: number[]): number {
-    const freqMap = new Map<number, number>();
+// function singleNumber(nums: number[]): number {
+//     const freqMap = new Map<number, number>();
 
-    // Har bir element necha marta uchraganini hisoblash
-    for (const num of nums) {
-        freqMap.set(num, (freqMap.get(num) || 0) + 1);
-    }
+//     // Har bir element necha marta uchraganini hisoblash
+//     for (const num of nums) {
+//         freqMap.set(num, (freqMap.get(num) || 0) + 1);
+//     }
 
-    // 1 marta uchragan elementni qaytarish
-    for (const [key, value] of freqMap.entries()) {
-        if (value === 1) {
-            return key;
-        }
-    }
+//     // 1 marta uchragan elementni qaytarish
+//     for (const [key, value] of freqMap.entries()) {
+//         if (value === 1) {
+//             return key;
+//         }
+//     }
 
-    throw new Error("Hech qanday bitta element topilmadi!");
-}
+//     throw new Error("Hech qanday bitta element topilmadi!");
+// }
 
-// Test
-console.log(singleNumber([4, 2, 1, 2, 1])); // 4
+// // Test
+// console.log(singleNumber([4, 2, 1, 2, 1])); // 4
 
 
 
