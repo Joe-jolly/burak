@@ -26,34 +26,71 @@
 */
 
 /* ###########################    ###############################   ######################*/
+/**ZU-TASK:
+
+Shunday function yozing, u parametridagi array ichida takrorlanmagan raqamlar yig'indisini qaytarsin.
+MASALAN: sumOfUnique([1,2,3,2]) return 4
+ */
+
+function sumOfUnique(arr: number[]): number {
+  const count: Record<number, number> = {};
+
+  // Har bir sonni necha marta uchraganini hisoblaymiz
+  for (const num of arr) {
+    count[num] = (count[num] || 0) + 1;
+  }
+
+  // Faqat 1 marta uchragan sonlarni yig'amiz
+  let sum = 0;
+  for (const num in count) {
+    if (count[num] === 1) {
+      sum += Number(num);
+    }
+  }
+
+  return sum;
+}
+
+console.log(sumOfUnique([1, 2, 3, 2]));       // 4 → (1 + 3)
+console.log(sumOfUnique([1, 1, 1, 1]));       // 0 → unique yo‘q
+console.log(sumOfUnique([5, 7, 5, 9, 7, 10])); // 19 → (9 + 10)
+console.log(sumOfUnique([]));                // 0
+
+
+
+
+
+
+
+/* ###########################    ###############################   ######################*/
 /**ZT-TASK:
 
 Shunday function yozing, u parametridagi string ichida 1 martadan ortiq qaytarilmagan birinchi harf indeksini qaytarsin.
 MASALAN: firstUniqueCharIndex(“stamp”) return 0
  */
 
-function firstUniqueCharIndex(str: string): number {
-  const charCount = new Map<string, number>();
+// function firstUniqueCharIndex(str: string): number {
+//   const charCount = new Map<string, number>();
 
-  // 1-qadam: harflar necha marta uchraganini hisoblaymiz
-  for (const char of str) {
-    charCount.set(char, (charCount.get(char) || 0) + 1);
-  }
+//   // 1-qadam: harflar necha marta uchraganini hisoblaymiz
+//   for (const char of str) {
+//     charCount.set(char, (charCount.get(char) || 0) + 1);
+//   }
 
-  // 2-qadam: birinchi 1 marta uchragan harfning indeksini topamiz
-  for (let i = 0; i < str.length; i++) {
-    if (charCount.get(str[i]) === 1) {
-      return i;
-    }
-  }
+//   // 2-qadam: birinchi 1 marta uchragan harfning indeksini topamiz
+//   for (let i = 0; i < str.length; i++) {
+//     if (charCount.get(str[i]) === 1) {
+//       return i;
+//     }
+//   }
 
-  return -1; // Agar topilmasa
-}
+//   return -1; // Agar topilmasa
+// }
 
-// Test
-console.log(firstUniqueCharIndex("stamp")); // 0
-console.log(firstUniqueCharIndex("letter")); // 0 ('t' birinchi marta 1 marta uchraydi)
-console.log(firstUniqueCharIndex("aabbcc")); // -1 (hech biri unique emas)
+// // Test
+// console.log(firstUniqueCharIndex("stamp")); // 0
+// console.log(firstUniqueCharIndex("letter")); // 0 ('t' birinchi marta 1 marta uchraydi)
+// console.log(firstUniqueCharIndex("aabbcc")); // -1 (hech biri unique emas)
 
 
 
